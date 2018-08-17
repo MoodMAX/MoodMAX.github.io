@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux系统信息查看(二) | MoodMAX</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Linux," />
+  
+
+  <meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux系统信息查看(二)">
+<meta property="og:url" content="http://www.moodmax.me/2015/11/25/Linux系统信息查看(二)/index.html">
+<meta property="og:site_name" content="MoodMAX">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://7xs1ta.com1.z0.glb.clouddn.com/Linux%20logo.jpg">
+<meta property="og:updated_time" content="2016-07-22T02:30:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux系统信息查看(二)">
+<meta name="twitter:image" content="http://7xs1ta.com1.z0.glb.clouddn.com/Linux%20logo.jpg">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Linux系统信息查看(二)" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Linux系统信息查看(二)</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2015.11.25</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>MoodMAX</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><center><img src="http://7xs1ta.com1.z0.glb.clouddn.com/Linux%20logo.jpg" alt="Linux Logo"></center><br><a id="more"></a></p>
+<h2 id="1-查看系统内核参数"><a href="#1-查看系统内核参数" class="headerlink" title="1.查看系统内核参数"></a>1.查看系统内核参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ cat /proc/cmdline</span><br><span class="line">BOOT_IMAGE=/boot/vmlinuz-4.2.0-34-generic root=UUID=b0d331a7-e90a-481e-98af-d59b9a26b342 ro quiet splash vt.handoff=7</span><br><span class="line">$ sysctl -a | more</span><br><span class="line">sysctl: permission denied on key <span class="string">'fs.protected_hardlinks'</span></span><br><span class="line">sysctl: abi.vsyscall32 = 1</span><br><span class="line">permission denied on key <span class="string">'fs.protected_symlinks'</span></span><br><span class="line">debug.exception-trace = 1</span><br><span class="line">debug.kprobes-optimization = 1</span><br><span class="line">dev.cdrom.autoclose = 1</span><br><span class="line">dev.cdrom.autoeject = 0</span><br><span class="line">(信息较多，部分忽略)</span><br></pre></td></tr></table></figure>
+<h2 id="2-查看系统内核架构-32-bit或者64-bit"><a href="#2-查看系统内核架构-32-bit或者64-bit" class="headerlink" title="2.查看系统内核架构(32 bit或者64 bit)"></a>2.查看系统内核架构(32 bit或者64 bit)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ uname -m</span><br><span class="line">x86_64</span><br><span class="line">$ getconf LONG_BIT</span><br><span class="line">64</span><br><span class="line">$ arch</span><br><span class="line">x86_64</span><br></pre></td></tr></table></figure>
+<h2 id="3-查看系统磁盘信息"><a href="#3-查看系统磁盘信息" class="headerlink" title="3.查看系统磁盘信息"></a>3.查看系统磁盘信息</h2><h3 id="查看所有安装的磁盘和大小"><a href="#查看所有安装的磁盘和大小" class="headerlink" title="查看所有安装的磁盘和大小"></a>查看所有安装的磁盘和大小</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ sudo fdisk -l | grep <span class="string">'^Disk /dev'</span></span><br><span class="line">Partition 2 does not start on physical sector boundary.</span><br><span class="line">Disk /dev/ram0: 64 MiB, 67108864 bytes, 131072 sectors</span><br><span class="line">Disk /dev/ram1: 64 MiB, 67108864 bytes, 131072 sectors</span><br><span class="line">Disk /dev/ram2: 64 MiB, 67108864 bytes, 131072 sectors</span><br><span class="line">Disk /dev/ram3: 64 MiB, 67108864 bytes, 131072 sectors</span><br><span class="line">Disk /dev/ram4: 64 MiB, 67108864 bytes, 131072 sectors</span><br><span class="line">Disk /dev/ram5: 64 MiB, 67108864 bytes, 131072 sectors</span><br><span class="line">Disk /dev/ram6: 64 MiB, 67108864 bytes, 131072 sectors</span><br><span class="line">Disk /dev/ram7: 64 MiB, 67108864 bytes, 131072 sectors</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<h3 id="查看某一个磁盘分区-以-dev-sda为例"><a href="#查看某一个磁盘分区-以-dev-sda为例" class="headerlink" title="查看某一个磁盘分区(以/dev/sda为例)"></a>查看某一个磁盘分区(以/dev/sda为例)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ sudo fdisk -l /dev/sda</span><br><span class="line">Disk /dev/sda: 931.5 GiB, 1000204886016 bytes, 1953525168 sectors</span><br><span class="line">Units: sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 4096 bytes</span><br><span class="line">I/O size (minimum/optimal): 4096 bytes / 4096 bytes</span><br><span class="line">Disklabel <span class="built_in">type</span>: dos</span><br><span class="line">Disk identifier: 0x2856e6e4</span><br><span class="line">设备       启动 Start     末尾     扇区   Size Id 类型</span><br><span class="line">/dev/sda1  *     2048 1953523711 1953521664 931.5G 83 Linux</span><br></pre></td></tr></table></figure>
+<h3 id="查看所有的块设备"><a href="#查看所有的块设备" class="headerlink" title="查看所有的块设备"></a>查看所有的块设备</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ lsblk</span><br><span class="line">NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT</span><br><span class="line">sda      8:0    0 931.5G  0 disk </span><br><span class="line">└─sda1   8:1    0 931.5G  0 part /HDD</span><br><span class="line">sdb      8:16   0 238.5G  0 disk </span><br><span class="line">├─sdb1   8:17   0   1.9G  0 part [SWAP]</span><br><span class="line">├─sdb2   8:18   0     1K  0 part </span><br><span class="line">└─sdb5   8:21   0 236.6G  0 part /</span><br><span class="line">sr0     11:0    1  1024M  0 rom</span><br></pre></td></tr></table></figure>
+<h3 id="查看文件系统的使用情况"><a href="#查看文件系统的使用情况" class="headerlink" title="查看文件系统的使用情况"></a>查看文件系统的使用情况</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">$ df</span><br><span class="line">文件系统           1K-块     已用      可用 已用% 挂载点</span><br><span class="line">udev             8144012        0   8144012    0% /dev</span><br><span class="line">tmpfs            1632264     9720   1622544    1% /run</span><br><span class="line">/dev/sdb5      244031768  9722628 221889968    5% /</span><br><span class="line">tmpfs            8161312    55784   8105528    1% /dev/shm</span><br><span class="line">tmpfs               5120        4      5116    1% /run/lock</span><br><span class="line">tmpfs            8161312        0   8161312    0% /sys/fs/cgroup</span><br><span class="line">/dev/sda1      961301832 26746880 885700528    3% /HDD</span><br><span class="line">cgmfs                100        0       100    0% /run/cgmanager/fs</span><br><span class="line">tmpfs            1632264       64   1632200    1% /run/user/1000</span><br><span class="line">$ df -H</span><br><span class="line">文件系统        容量  已用  可用 已用% 挂载点</span><br><span class="line">udev            8.4G     0  8.4G    0% /dev</span><br><span class="line">tmpfs           1.7G   10M  1.7G    1% /run</span><br><span class="line">/dev/sdb5       250G   10G  228G    5% /</span><br><span class="line">tmpfs           8.4G   58M  8.4G    1% /dev/shm</span><br><span class="line">tmpfs           5.3M  4.1k  5.3M    1% /run/lock</span><br><span class="line">tmpfs           8.4G     0  8.4G    0% /sys/fs/cgroup</span><br><span class="line">/dev/sda1       985G   28G  907G    3% /HDD</span><br><span class="line">cgmfs           103k     0  103k    0% /run/cgmanager/fs</span><br><span class="line">tmpfs           1.7G   66k  1.7G    1% /run/user/1000</span><br><span class="line">$ df -HT</span><br><span class="line">文件系统       类型      容量  已用  可用 已用% 挂载点</span><br><span class="line">udev           devtmpfs  8.4G     0  8.4G    0% /dev</span><br><span class="line">tmpfs          tmpfs     1.7G   10M  1.7G    1% /run</span><br><span class="line">/dev/sdb5      ext4      250G   10G  228G    5% /</span><br><span class="line">tmpfs          tmpfs     8.4G   58M  8.3G    1% /dev/shm</span><br><span class="line">tmpfs          tmpfs     5.3M  4.1k  5.3M    1% /run/lock</span><br><span class="line">tmpfs          tmpfs     8.4G     0  8.4G    0% /sys/fs/cgroup</span><br><span class="line">/dev/sda1      ext4      985G   28G  907G    3% /HDD</span><br><span class="line">cgmfs          tmpfs     103k     0  103k    0% /run/cgmanager/fs</span><br><span class="line">tmpfs          tmpfs     1.7G   66k  1.7G    1% /run/user/1000</span><br></pre></td></tr></table></figure>
+<h3 id="查看挂载的文件系统"><a href="#查看挂载的文件系统" class="headerlink" title="查看挂载的文件系统"></a>查看挂载的文件系统</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ mount</span><br><span class="line">sysfs on /sys <span class="built_in">type</span> sysfs (rw,nosuid,nodev,noexec,relatime)</span><br><span class="line">proc on /proc <span class="built_in">type</span> proc (rw,nosuid,nodev,noexec,relatime)</span><br><span class="line">udev on /dev <span class="built_in">type</span> devtmpfs (rw,nosuid,relatime,size=8144012k,nr_inodes=2036003,mode=755)</span><br><span class="line">devpts on /dev/pts <span class="built_in">type</span> devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)</span><br><span class="line">tmpfs on /run <span class="built_in">type</span> tmpfs </span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<h2 id="4-查看系统PCI设备的硬件信息"><a href="#4-查看系统PCI设备的硬件信息" class="headerlink" title="4.查看系统PCI设备的硬件信息"></a>4.查看系统PCI设备的硬件信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ lspci</span><br><span class="line">00:00.0 Host bridge: Intel Corporation 3rd Gen Core processor DRAM Controller (rev 09)</span><br><span class="line">00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor PCI Express Root Port (rev 09)</span><br><span class="line">00:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core processor Graphics Controller (rev 09)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="5-查看系统USB设备信息"><a href="#5-查看系统USB设备信息" class="headerlink" title="5.查看系统USB设备信息"></a>5.查看系统USB设备信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$ lsusb</span><br><span class="line">Bus 004 Device 004: ID 04f2:b34c Chicony Electronics Co., Ltd </span><br><span class="line">Bus 004 Device 003: ID 147e:1002 Upek Biometric Touchchip/Touchstrip Fingerprint Sensor</span><br><span class="line">Bus 004 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub</span><br><span class="line">Bus 004 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 003 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub</span><br><span class="line">Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub</span><br><span class="line">Bus 001 Device 002: ID 046d:c537 Logitech, Inc. </span><br><span class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">$ lsusb -vt</span><br><span class="line">/:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=ehci-pci/2p, 480M</span><br><span class="line">    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/8p, 480M</span><br><span class="line">        |__ Port 5: Dev 3, If 0, Class=Vendor Specific Class, Driver=, 12M</span><br><span class="line">        |__ Port 6: Dev 4, If 0, Class=Video, Driver=uvcvideo, 480M</span><br><span class="line">        |__ Port 6: Dev 4, If 1, Class=Video, Driver=uvcvideo, 480M</span><br><span class="line">/:  Bus 03.Port 1: Dev 1, Class=root_hub, Driver=ehci-pci/2p, 480M</span><br><span class="line">    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/6p, 480M</span><br><span class="line">/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/4p, 5000M</span><br><span class="line">/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/4p, 480M</span><br><span class="line">    |__ Port 3: Dev 2, If 0, Class=Human Interface Device, Driver=usbhid, 12M</span><br><span class="line">    |__ Port 3: Dev 2, If 1, Class=Human Interface Device, Driver=usbhid, 12M</span><br></pre></td></tr></table></figure>
+<h2 id="6-查看系统无线设备信息"><a href="#6-查看系统无线设备信息" class="headerlink" title="6.查看系统无线设备信息"></a>6.查看系统无线设备信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ iwconfig</span><br><span class="line">enp4s0f2  no wireless extensions.</span><br><span class="line">lo        no wireless extensions.</span><br><span class="line">wlp3s0    IEEE 802.11bgn  ESSID:<span class="string">"stdu.edu.cn"</span>  </span><br><span class="line">          Mode:Managed  Frequency:2.437 GHz  Access Point: 26:14:4B:55:AE:53   </span><br><span class="line">          Bit Rate=72.2 Mb/s   Tx-Power=20 dBm   </span><br><span class="line">          Retry short <span class="built_in">limit</span>:7   RTS thr=2347 B   Fragment thr:off</span><br><span class="line">          Power Management:off</span><br><span class="line">          Link Quality=40/70  Signal level=-70 dBm  </span><br><span class="line">          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0</span><br><span class="line">          Tx excessive retries:0  Invalid misc:1097   Missed beacon:0</span><br><span class="line">$ watch -n 1 cat /proc/net/wireless</span><br><span class="line">(实时显示)</span><br><span class="line">$ wavemon</span><br><span class="line">(动态显示无线网络质量等信息)</span><br></pre></td></tr></table></figure>
+<p>注意：执行上述<code>wavemon</code>指令时需要先执行<code>sudo apt-get install wavemon</code>。</p>
+<h2 id="7-查看系统VGA等图形设备信息"><a href="#7-查看系统VGA等图形设备信息" class="headerlink" title="7.查看系统VGA等图形设备信息"></a>7.查看系统VGA等图形设备信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ lspci | grep -i vga</span><br><span class="line">00:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core processor Graphics Controller (rev 09)</span><br><span class="line">01:00.0 VGA compatible controller: NVIDIA Corporation GK107M [GeForce GTX 660M] (rev a1)</span><br><span class="line">$ lspci -vvnn | grep VGA</span><br><span class="line">	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-</span><br><span class="line">	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+</span><br><span class="line">	BridgeCtl: Parity- SERR- NoISA- VGA- MAbort- &gt;Reset- FastB2B-</span><br><span class="line">00:02.0 VGA compatible controller [0300]: Intel Corporation 3rd Gen Core processor Graphics Controller [8086:0166] (rev 09) (prog-if 00 [VGA controller])</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<h3 id="查看NVIDIA设备"><a href="#查看NVIDIA设备" class="headerlink" title="查看NVIDIA设备"></a>查看NVIDIA设备</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvidia-smi</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvidia-settings</span><br></pre></td></tr></table></figure></p>
+<h3 id="查看AMD-ATI显卡设备信息"><a href="#查看AMD-ATI显卡设备信息" class="headerlink" title="查看AMD/ATI显卡设备信息"></a>查看AMD/ATI显卡设备信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fglrxinfo</span><br></pre></td></tr></table></figure>
+<h3 id="查看系统unity版本"><a href="#查看系统unity版本" class="headerlink" title="查看系统unity版本"></a>查看系统unity版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ unity --version</span><br><span class="line">unity 7.3.3</span><br></pre></td></tr></table></figure>
+<h3 id="查看系统视频设备信息"><a href="#查看系统视频设备信息" class="headerlink" title="查看系统视频设备信息"></a>查看系统视频设备信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ lspci | grep -i audio</span><br><span class="line">00:1b.0 Audio device: Intel Corporation 7 Series/C210 Series Chipset Family High Definition Audio Controller (rev 04)</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat /proc/asound/cards</span><br><span class="line"> 0 [PCH            ]: HDA-Intel - HDA Intel PCH</span><br><span class="line">                      HDA Intel PCH at 0xf7a10000 irq 32</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ arecord -l</span><br><span class="line">**** CAPTURE 硬體裝置清單 ****</span><br><span class="line">card 0: PCH [HDA Intel PCH], device 0: ALC269VB Analog [ALC269VB Analog]</span><br><span class="line">  子设备: 1/1</span><br><span class="line">  子设备 <span class="comment">#0: subdevice #0</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="8-查看电池信息"><a href="#8-查看电池信息" class="headerlink" title="8.查看电池信息"></a>8.查看电池信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$ upower -i /org/freedesktop/UPower/devices/battery_BAT0</span><br><span class="line">native-path:          (null)</span><br><span class="line">  power supply:         no</span><br><span class="line">  updated:              1970年01月01日 星期四 08时00分00秒 (1458648160 seconds ago)</span><br><span class="line">  has <span class="built_in">history</span>:          no</span><br><span class="line">  has statistics:       no</span><br><span class="line">  unknown</span><br><span class="line">    warning-level:       unknown</span><br><span class="line">    icon-name:          <span class="string">'(null)'</span></span><br><span class="line">$ acpi -V</span><br><span class="line">Battery 0: Full, 100%</span><br><span class="line">Battery 0: design capacity 5200 mAh, last full capacity 3701 mAh = 71%</span><br><span class="line">Adapter 0: on-line</span><br><span class="line">Thermal 0: ok, 56.0 degrees C</span><br><span class="line">Thermal 0: trip point 0 switches to mode critical at temperature 149.8 degrees C</span><br><span class="line">Cooling 0: x86_pkg_temp no state information available</span><br><span class="line">Cooling 1: intel_powerclamp no state information available</span><br><span class="line">Cooling 2: LCD 6 of 7</span><br><span class="line">Cooling 3: Processor 0 of 3</span><br><span class="line">Cooling 4: Processor 0 of 3</span><br><span class="line">Cooling 5: Processor 0 of 3</span><br><span class="line">Cooling 6: Processor 0 of 3</span><br><span class="line">Cooling 7: Processor 0 of 3</span><br><span class="line">Cooling 8: Processor 0 of 3</span><br><span class="line">Cooling 9: Processor 0 of 3</span><br><span class="line">Cooling 10: Processor 0 of 3</span><br></pre></td></tr></table></figure>
+<h2 id="9-查看系统运行了多长时间"><a href="#9-查看系统运行了多长时间" class="headerlink" title="9.查看系统运行了多长时间"></a>9.查看系统运行了多长时间</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ uptime</span><br><span class="line"> 20:03:41 up 40 min,  2 users,  load average: 0.31, 0.26, 0.29</span><br><span class="line">$ who</span><br><span class="line">vil     :0           2016-03-22 19:22 (:0)</span><br><span class="line">evil     pts/2        2016-03-22 19:32 (:0)</span><br><span class="line">$ w</span><br><span class="line"> 20:04:01 up 41 min,  2 users,  load average: 0.29, 0.26, 0.29</span><br><span class="line">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</span><br><span class="line">evil     :0       :0               19:22   ?xdm?  12:38   0.31s /sbin/upstart --user</span><br><span class="line">evil     pts/2    :0               19:32    0.00s  0.15s  0.00s w</span><br></pre></td></tr></table></figure>
+<h2 id="10-查看系统负载"><a href="#10-查看系统负载" class="headerlink" title="10.查看系统负载"></a>10.查看系统负载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat /proc/loadavg</span><br><span class="line">0.46 0.30 0.30 1/676 5626</span><br><span class="line">$ sudo top</span><br></pre></td></tr></table></figure>
+<h2 id="11-查看系统重启和关机记录"><a href="#11-查看系统重启和关机记录" class="headerlink" title="11.查看系统重启和关机记录"></a>11.查看系统重启和关机记录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ last reboot</span><br><span class="line">reboot   system boot  4.2.0-34-generic Tue Mar 22 19:22   still running</span><br><span class="line">reboot   system boot  4.2.0-34-generic Tue Mar 22 18:37 - 19:22  (00:45)</span><br><span class="line">reboot   system boot  4.2.0-34-generic Tue Mar 22 15:49 - 17:22  (01:32)</span><br><span class="line">reboot   system boot  4.2.0-34-generic Tue Mar 22 14:50 - 15:49  (00:58)</span><br><span class="line">reboot   system boot  4.2.0-34-generic Tue Mar 22 08:11 - 13:16  (05:04)</span><br><span class="line">reboot   system boot  4.2.0-34-generic Mon Mar 21 22:44 - 22:47  (00:03)</span><br><span class="line">reboot   system boot  4.2.0-34-generic Mon Mar 21 18:16 - 22:47  (04:31)</span><br><span class="line">......</span><br><span class="line">$ last shutdown</span><br><span class="line">wtmp begins Thu Mar 17 19:59:43 2016</span><br></pre></td></tr></table></figure>
+<h2 id="12-查看系统运行级别"><a href="#12-查看系统运行级别" class="headerlink" title="12.查看系统运行级别"></a>12.查看系统运行级别</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ runlevel</span><br><span class="line">N 5</span><br><span class="line">$ who -r</span><br><span class="line">运行级别 5 2016-03-22 19:23</span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

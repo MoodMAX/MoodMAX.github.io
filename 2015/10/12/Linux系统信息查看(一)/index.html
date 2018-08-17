@@ -9,26 +9,31 @@
   
   <title>Linux系统信息查看(一) | MoodMAX</title>
 
+  
+  
+    <meta name="baidu-site-verification" content="170QG9lKX3" />
+  
+
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
     <meta name="keywords" content="Linux," />
   
 
-  <meta name="description" content="对于一台新的Linux计算机或者服务器，我们需要收集一些关于这台机器的硬件信息。当你更换机器的内存或者网卡以及硬盘等硬件设备时候同样十分有用，因为更换之前你需要首先收集你系统硬件信息的型号，以此来挑选相应的硬件，这次，我来给大家列出几个常用的用于收集硬件信息的指令。">
+  <meta name="description" content="对于一台新的Linux计算机或者服务器，我们需要收集一些关于这台机器的硬件信息。当你更换机器的内存或者网卡以及硬盘等硬件设备时候同样十分有用，因为更换之前你需要首先收集你系统硬件信息的型号，以此来挑选相应的硬件，这里列出几个常用的用于收集硬件信息的指令。">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux系统信息查看(一)">
-<meta property="og:url" content="http://www.moodmax.me/2015/11/12/Linux系统信息查看(一)/index.html">
+<meta property="og:url" content="http://www.moodmax.me/2015/10/12/Linux系统信息查看(一)/index.html">
 <meta property="og:site_name" content="MoodMAX">
-<meta property="og:description" content="对于一台新的Linux计算机或者服务器，我们需要收集一些关于这台机器的硬件信息。当你更换机器的内存或者网卡以及硬盘等硬件设备时候同样十分有用，因为更换之前你需要首先收集你系统硬件信息的型号，以此来挑选相应的硬件，这次，我来给大家列出几个常用的用于收集硬件信息的指令。">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://7xs1ta.com1.z0.glb.clouddn.com/Ubuntu.png">
-<meta property="og:updated_time" content="2016-07-22T02:32:04.000Z">
+<meta property="og:description" content="对于一台新的Linux计算机或者服务器，我们需要收集一些关于这台机器的硬件信息。当你更换机器的内存或者网卡以及硬盘等硬件设备时候同样十分有用，因为更换之前你需要首先收集你系统硬件信息的型号，以此来挑选相应的硬件，这里列出几个常用的用于收集硬件信息的指令。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/08/17/5b7657b7013f0.png">
+<meta property="og:updated_time" content="2018-08-17T06:12:51.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统信息查看(一)">
-<meta name="twitter:description" content="对于一台新的Linux计算机或者服务器，我们需要收集一些关于这台机器的硬件信息。当你更换机器的内存或者网卡以及硬盘等硬件设备时候同样十分有用，因为更换之前你需要首先收集你系统硬件信息的型号，以此来挑选相应的硬件，这次，我来给大家列出几个常用的用于收集硬件信息的指令。">
-<meta name="twitter:image" content="http://7xs1ta.com1.z0.glb.clouddn.com/Ubuntu.png">
+<meta name="twitter:description" content="对于一台新的Linux计算机或者服务器，我们需要收集一些关于这台机器的硬件信息。当你更换机器的内存或者网卡以及硬盘等硬件设备时候同样十分有用，因为更换之前你需要首先收集你系统硬件信息的型号，以此来挑选相应的硬件，这里列出几个常用的用于收集硬件信息的指令。">
+<meta name="twitter:image" content="https://i.loli.net/2018/08/17/5b7657b7013f0.png">
 
   
 
@@ -44,10 +49,49 @@
   
 
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-124202897-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
   
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?l0TM4IQrQD12Mua2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
   
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
 
 
   
@@ -143,7 +187,7 @@
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2015.11.12</span>
+        <span>2015.10.12</span>
       </span>
 
       
@@ -166,12 +210,12 @@
   <div class="article-content">
     
       <blockquote>
-<p>对于一台新的Linux计算机或者服务器，我们需要收集一些关于这台机器的硬件信息。当你更换机器的内存或者网卡以及硬盘等硬件设备时候同样十分有用，因为更换之前你需要首先收集你系统硬件信息的型号，以此来挑选相应的硬件，这次，我来给大家列出几个常用的用于收集硬件信息的指令。</p>
+<p>对于一台新的Linux计算机或者服务器，我们需要收集一些关于这台机器的硬件信息。当你更换机器的内存或者网卡以及硬盘等硬件设备时候同样十分有用，因为更换之前你需要首先收集你系统硬件信息的型号，以此来挑选相应的硬件，这里列出几个常用的用于收集硬件信息的指令。</p>
 </blockquote>
 <a id="more"></a>
-<center><img src="http://7xs1ta.com1.z0.glb.clouddn.com/Ubuntu.png" alt="Ubuntu Linux logo"></center>
+<center><img src="https://i.loli.net/2018/08/17/5b7657b7013f0.png" alt=""></center>
 
-<p>所有以下的指令都是在我自己的Ubuntu15.10上做的测试，但这些指令同样适用于Debian系的其他发行版或者是CentOS等等。</p>
+<p>所有以下的指令都是在我自己的Ubuntu15.10上做的测试，但这些指令同样适用于Debian系的其他发行版，部分指令适用于RedHat系。</p>
 <h2 id="1-查看系统主机名"><a href="#1-查看系统主机名" class="headerlink" title="1.查看系统主机名"></a>1.查看系统主机名</h2><h3 id="查看hostname"><a href="#查看hostname" class="headerlink" title="查看hostname"></a>查看hostname</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hostname</span><br><span class="line">Finder</span><br><span class="line">$ cat /etc/hostname</span><br><span class="line">Finder</span><br></pre></td></tr></table></figure>
 <h3 id="查看DNS-domain-name"><a href="#查看DNS-domain-name" class="headerlink" title="查看DNS domain name"></a>查看DNS domain name</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ dnsdomainname</span><br><span class="line">cyberciti.biz</span><br></pre></td></tr></table></figure>
 <h3 id="查看系统全称域名"><a href="#查看系统全称域名" class="headerlink" title="查看系统全称域名"></a>查看系统全称域名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hostname -f</span><br><span class="line">Finder</span><br></pre></td></tr></table></figure>

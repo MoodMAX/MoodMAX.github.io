@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python正则表达式(二) | MoodMAX</title>
+
+  
+  
+    <meta name="baidu-site-verification" content="170QG9lKX3" />
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Python,RegEx," />
+  
+
+  <meta name="keywords" content="Python,RegEx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python正则表达式(二)">
+<meta property="og:url" content="http://www.moodmax.me/2016/08/21/Python正则表达式(二)/index.html">
+<meta property="og:site_name" content="MoodMAX">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/08/17/5b7693dfdb9de.jpg">
+<meta property="og:updated_time" content="2018-08-17T09:22:53.549Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python正则表达式(二)">
+<meta name="twitter:image" content="https://i.loli.net/2018/08/17/5b7693dfdb9de.jpg">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-124202897-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?3b85893cac8f6874ab062c2177c52bd9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Python正则表达式(二)" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Python正则表达式(二)</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.08.21</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>MoodMAX</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><img src="https://i.loli.net/2018/08/17/5b7693dfdb9de.jpg" alt=""></p>
+<a id="more"></a>
+<h2 id="正则描述符"><a href="#正则描述符" class="headerlink" title="正则描述符"></a>正则描述符</h2><h3 id="描述符"><a href="#描述符" class="headerlink" title="*描述符"></a>*描述符</h3><p>正则表达式的重复运算符是<code>*</code>，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">α*： 匹配模式α任意多次</span><br></pre></td></tr></table></figure></p>
+<p>因此执行<code>re.split(&#39;[ ,]*&#39;, &#39;abbaabbbadbbdbaabcaab&#39;)</code>得到的结果为[‘’, ‘bb’, ‘bbb’, ‘dbbdb’, ‘bc’, ‘b’]。</p>
+<h3 id="？描述符"><a href="#？描述符" class="headerlink" title="？描述符"></a>？描述符</h3><p>？为可选描述符。<br>比如α？表示与α匹配0次或1次，即匹配空串或者α模式串。<br>例如：表示整数的一种正则表达形式为<code>-?\d+</code>，其匹配正数、负数和0。</p>
+<h3 id="n-描述符"><a href="#n-描述符" class="headerlink" title="{n}描述符"></a>{n}描述符</h3><p>{n}为重复次数描述符。<br>比如α{5}表示与α模式串重复匹配5次。<br>例如：匹配北京固话的正则表达式的一种表示形式为<code>(010-)?[2-9][0-9]{7}</code>。该正则与<code>010-</code>开头，随后一位数字为2到9，之后7位0到9的数字的字符串匹配。</p>
+<h3 id="m-n-描述符"><a href="#m-n-描述符" class="headerlink" title="{m,n}描述符"></a>{m,n}描述符</h3><p>{m,n}为重复次数范围描述符。<br>比如α{2,4}表示重复匹配α模式串2到4次，包括2次和4次。<br>重复范围描述符中的m和n可以省略，例如α{,n}等价与α{0,n}，而α{m,}等价于α{m,infinity}。</p>
+<h3 id="描述符-1"><a href="#描述符-1" class="headerlink" title="|描述符"></a>|描述符</h3><p><code>|</code>为选择描述符，其与两种或多种情况之一匹配。<br>比如<code>α|β</code>表示与α或者β之一的模式串匹配。</p>
+<h3 id="首位描述符"><a href="#首位描述符" class="headerlink" title="首位描述符"></a>首位描述符</h3><blockquote>
+<ul>
+<li>行首描述符：以’^’开头的模式串，与目标字符串一行的前缀子串匹配。</li>
+<li>行尾描述符：以’$’结尾的模式串，与目标字符串一行的后缀子串匹配。</li>
+</ul>
+</blockquote>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(&apos;^for&apos;, &apos;This is for you&apos;)       #匹配结果为None。</span><br><span class="line">re.search(&apos;^for&apos;, &apos;This is \nfor you&apos;)     #匹配成功。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(&apos;book$&apos;, &apos;I have many books&apos;)    #匹配结果为None。</span><br><span class="line">re.search(&apos;book$&apos;, &apos;This is a book&apos;)       #匹配成功。</span><br></pre></td></tr></table></figure>
+<h2 id="贪婪匹配和非贪婪匹配"><a href="#贪婪匹配和非贪婪匹配" class="headerlink" title="贪婪匹配和非贪婪匹配"></a>贪婪匹配和非贪婪匹配</h2><p>考虑如下匹配模式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">re.match(&apos;ab*&apos;, &apos;abbbbbbc&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>对于其中的匹配模式<code>ab*</code>，匹配字符串中的<code>ab</code>和<code>abbbbbb</code>均可与其匹配，那么这个时候该匹配哪一种字符串呢？正则表达式提供了两种可能的匹配方案：</p>
+<blockquote>
+<ul>
+<li>贪婪匹配： 匹配目标字符串中尽可能长的子串</li>
+<li>非贪婪匹配： 匹配目标字符串尽可能短的子串</li>
+</ul>
+</blockquote>
+<p>其中非贪婪匹配又称<code>吝啬匹配</code>，正则表达式规定<code>*</code>运算符做贪婪匹配，因此上述<code>ab*</code>将会匹配<code>abbbbbb</code>。<br><code>*</code>、<code>+</code>、<code>?</code>、<code>{m,n}</code>均采取贪婪匹配规则，若要采用非贪婪匹配规则，可以使用非贪婪匹配描述符，<code>*?</code>、<code>+?</code>、<code>??</code>、<code>{m,n}?</code>均为非贪婪描述符，即在上述各贪婪描述符后加一个<code>?</code>，其语义与上述几个描述符对应，但都采取非贪婪匹配原则。</p>
+<h2 id="Python与正则表达式"><a href="#Python与正则表达式" class="headerlink" title="Python与正则表达式"></a>Python与正则表达式</h2><p>Python中使用正则表达式进行模式匹配时，匹配成功时会返回一个match对象，其中记录着匹配成功的相关信息。<br>不妨设我们匹配成功之后得到的match对象记为mat。</p>
+<h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><h4 id="mat-group"><a href="#mat-group" class="headerlink" title="mat.group()"></a>mat.group()</h4><p>group()函数用于取得匹配成功的子串。</p>
+<h4 id="mat-start"><a href="#mat-start" class="headerlink" title="mat.start()"></a>mat.start()</h4><p>start()函数获得匹配成功的目标子串起始位置的下标。</p>
+<h4 id="mat-end"><a href="#mat-end" class="headerlink" title="mat.end()"></a>mat.end()</h4><p>end()函数获得匹配成功的目标子串结束位置的下标。</p>
+<h4 id="mat-span"><a href="#mat-span" class="headerlink" title="mat.span()"></a>mat.span()</h4><p>span()函数获得匹配成功的目标子串的位置区间，即<code>mat.span() = mat.start(), mat.end()</code>。</p>
+<h3 id="正则模式的group"><a href="#正则模式的group" class="headerlink" title="正则模式的group"></a>正则模式的group</h3><p>正则表达式的一个重要概念是组。圆括号括起来的一段模式串代表一个组，在一次成功的匹配中，每一个组匹配成功的字符串将从1开始编号，组0表示与整个模式匹配的字符串，我们可以通过<code>mat.group(n)</code>来获得组n的匹配字符串。</p>
+<h3 id="其他常用匹配操作"><a href="#其他常用匹配操作" class="headerlink" title="其他常用匹配操作"></a>其他常用匹配操作</h3><p>正则表达式还有一些其他的常用匹配操作，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 生成一个正则表达式对象，可重复使用。</span><br><span class="line">re.compile(pattern)</span><br><span class="line"></span><br><span class="line"># 若string与pattern模式匹配成功返回匹配对象，否则返回None</span><br><span class="line">re.fulmatch(pattern, string, flags=0)</span><br><span class="line"></span><br><span class="line"># 将匹配结果以迭代器的形式返回，否则返回None</span><br><span class="line">re.finditer(pattern, string, flags=0)</span><br><span class="line"></span><br><span class="line"># 将string中与pattern模式匹配的部分用repl替换</span><br><span class="line">re.sub(pattern, repl, string, count=0, flags=0)</span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
